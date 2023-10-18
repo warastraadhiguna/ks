@@ -174,13 +174,19 @@
                     name: 'hargaJual',
                     orderable: false,
                     searchable: false                             
-                },     
+                },       
                 {
-                    data: 'tglExpired',
-                    name: 'tglExpired',
+                    data: 'hargaJual1',
+                    name: 'hargaJual1',
                     orderable: false,
                     searchable: false                             
-                },       
+                },  
+                {
+                    data: 'hargaJual2',
+                    name: 'hargaJual2',
+                    orderable: false,
+                    searchable: false                             
+                },    
                 {
                     data: 'note',
                     name: 'note',

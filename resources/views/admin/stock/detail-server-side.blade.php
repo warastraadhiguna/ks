@@ -48,8 +48,9 @@
             <th>Satuan</th>	
             <th>Stok</th>	                                                
             <th>Harga Beli</th>		    
-            <th>Harga Jual</th>			
-            <th>Tanggal Exp</th>		 
+            <th>Harga Jual</th>		
+            <th>Harga Jual 1</th>		
+            <th>Harga Jual 2</th>		                	 
             <th>Note</th>	            
             <th>Admin</th>					
         </tr>

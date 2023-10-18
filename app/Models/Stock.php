@@ -17,14 +17,14 @@ class Stock extends Model
     {
         $data = DB::query()
         ->from("tstok")
-        ->select("idStok", DB::raw("DATE_FORMAT(tanggalStok, '%d-%m-%Y') as tanggalStok"), "tanggalStok as tanggalStokAsli", "noBarang", "namaBarang", "stok", "namasatuan", DB::raw("FORMAT(hargaJual, 2, 'de_DE') as hargaJual"), DB::raw("FORMAT(hargaBeli, 2, 'de_DE') as hargaBeli"), "namaUser", DB::raw("case when tglExpired= '0000-00-00 00:00:00' then '' else DATE_FORMAT(tglExpired, '%d-%m-%Y')   end as tglExpired"), "note", "catatan", "namaMerek", "typeBarang", "namaJenisBarang");
+        ->select("idStok", DB::raw("DATE_FORMAT(tanggalStok, '%d-%m-%Y') as tanggalStok"), "tanggalStok as tanggalStokAsli", "noBarang", "namaBarang", "stok", "namasatuan", DB::raw("FORMAT(hargaJual, 2, 'de_DE') as hargaJual"), DB::raw("FORMAT(hargaJualGrosir1, 2, 'de_DE') as hargaJual1"), DB::raw("FORMAT(hargaJualGrosir2, 2, 'de_DE') as hargaJual2"), DB::raw("FORMAT(hargaBeli, 2, 'de_DE') as hargaBeli"), "namaUser", DB::raw("case when tglExpired= '0000-00-00 00:00:00' then '' else DATE_FORMAT(tglExpired, '%d-%m-%Y')   end as tglExpired"), "note", "catatan", "namaMerek", "typeBarang", "namaJenisBarang");
 
-        if($tanggalAwal && $tanggalAwal !=="\"") {
-            $data->where("tanggalStok", ">=", $tanggalAwal ." 00:00:00");
+        if($tanggalAwal && $tanggalAwal !== "\"") {
+            $data->where("tanggalStok", ">=", $tanggalAwal . " 00:00:00");
         }
 
-        if($tanggalAkhir && $tanggalAkhir !=="\"") {
-            $data->where("tanggalStok", "<=", $tanggalAkhir ." 23:59:59");
+        if($tanggalAkhir && $tanggalAkhir !== "\"") {
+            $data->where("tanggalStok", "<=", $tanggalAkhir . " 23:59:59");
         }
 
         if($show == 1) {
